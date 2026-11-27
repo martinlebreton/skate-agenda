@@ -1,11 +1,7 @@
 import { Link } from "react-router-dom";
 import type { Evenement } from "../types";
 import BoutonPartagerEvenement from "./BoutonPartagerEvenement";
-import {
-  formatPeriode,
-  formatTarif,
-  formatLocalisation,
-} from "../utils/formatters";
+import { formatTarif, formatLocalisation } from "../utils/formatters";
 
 export default function CarteEvenement({ evt }: { evt: Evenement }) {
   const info = evt.infoEvenement;
