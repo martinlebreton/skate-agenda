@@ -248,9 +248,19 @@ export default function Agenda() {
                 Aucun événement à venir ne correspond à ces filtres.
               </div>
             ) : (
-              <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
+              <div
+                role="region"
+                aria-label="Événements à venir"
+                tabIndex={0}
+                className="flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain pb-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal-700 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:snap-none md:pb-0 lg:grid-cols-3"
+              >
                 {evenements.map((evt) => (
-                  <CarteEvenement key={evt.id} evt={evt} />
+                  <div
+                    key={evt.id}
+                    className="w-[82%] shrink-0 snap-start md:w-auto md:shrink"
+                  >
+                    <CarteEvenement evt={evt} />
+                  </div>
                 ))}
               </div>
             )}
