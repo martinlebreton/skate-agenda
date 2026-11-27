@@ -239,7 +239,7 @@ export default function Agenda() {
         {/* Résultats */}
         {!isLoading && !isError && (
           <>
-            <p className="text-sm text-gray-400 mb-4">
+            <p className="text-lg text-gray-800 mb-4">
               {evenements.length} événement{evenements.length > 1 ? "s" : ""}
             </p>
 

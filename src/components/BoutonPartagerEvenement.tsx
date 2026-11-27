@@ -42,7 +42,7 @@ export default function BoutonPartagerEvenement({
       onClick={shareEvent}
       aria-label={copied ? "Lien copié" : `Partager ${title}`}
       title={copied ? "Lien copié" : "Partager l'événement"}
-      className={`shrink-0 rounded-md p-1.5 text-gray-500 transition-colors hover:bg-gray-100 hover:text-black focus-visible:outline-2 focus-visible:outline-teal-700 ${className}`}
+      className={`shrink-0 rounded-md p-1.5 text-gray-500 transition-colors hover:bg-gray-100 hover:text-black focus-visible:outline-2 focus-visible:outline-teal-700 md:hidden ${className}`}
     >
       {copied ? (
         <Check size={18} aria-hidden="true" />

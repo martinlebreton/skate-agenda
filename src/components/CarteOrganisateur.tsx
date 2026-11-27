@@ -14,7 +14,7 @@ export default function CarteOrganisateur({ org }: { org: Organisateur }) {
         <img
           src={org.featuredImage.node.sourceUrl}
           alt={org.featuredImage.node.altText || org.title}
-          className="w-full aspect-square object-contain"
+          className="w-full aspect-square bg-gray-100 object-contain"
         />
       ) : (
         <div className="w-full aspect-square bg-gray-100 flex items-center justify-center text-4xl">
@@ -33,6 +33,17 @@ export default function CarteOrganisateur({ org }: { org: Organisateur }) {
               {s.name}
             </span>
           ))}
+        </div>
+
+        {/* Nom */}
+        <h2 className="text-base font-bold leading-snug group-hover:underline">
+          {org.title}
+        </h2>
+        <div className="flex flex-wrap gap-1.5">
+          {/* Ville */}
+          {infos.orgVille && (
+            <p className="text-sm text-gray-500">{infos.orgVille}</p>
+          )}
           {org.regions.nodes.map((r) => (
             <span
               key={r.slug}
@@ -42,16 +53,6 @@ export default function CarteOrganisateur({ org }: { org: Organisateur }) {
             </span>
           ))}
         </div>
-
-        {/* Nom */}
-        <h2 className="text-base font-bold leading-snug group-hover:underline">
-          {org.title}
-        </h2>
-
-        {/* Ville */}
-        {infos.orgVille && (
-          <p className="text-sm text-gray-500">{infos.orgVille}</p>
-        )}
       </div>
     </Link>
   );

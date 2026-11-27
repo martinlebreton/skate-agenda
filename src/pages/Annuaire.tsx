@@ -155,7 +155,7 @@ export default function Annuaire() {
       {/* Résultats */}
       {!isLoading && !isError && (
         <>
-          <p className="text-sm text-gray-400 mb-4">
+          <p className="text-lg text-gray-800 mb-4">
             {resultats.length} organisateur{resultats.length > 1 ? "s" : ""}
           </p>
 

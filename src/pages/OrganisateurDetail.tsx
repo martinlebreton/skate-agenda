@@ -72,7 +72,7 @@ export default function OrganisateurDetail() {
         <img
           src={org.featuredImage.node.sourceUrl}
           alt={org.featuredImage.node.altText || org.title}
-          className="aspect-square h-52 object-cover rounded-2xl mb-6"
+          className="aspect-square h-52 object-contain rounded-2xl mb-6"
         />
       ) : (
         <div className="aspect-square h-52 bg-gray-100 rounded-2xl mb-6 flex items-center justify-center text-6xl">
