@@ -4,6 +4,7 @@ import Agenda from "./pages/Agenda";
 import EvenementDetail from "./pages/EvenementDetail";
 import Annuaire from "./pages/Annuaire";
 import OrganisateurDetail from "./pages/OrganisateurDetail";
+import Contact from "./pages/Contact";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/agenda/:slug" element={<EvenementDetail />} />
           <Route path="/organisateurs" element={<Annuaire />} />
           <Route path="/organisateurs/:slug" element={<OrganisateurDetail />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
     </div>
