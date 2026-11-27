@@ -9,6 +9,7 @@ import {
   INFOS_LABELS,
 } from "../utils/formatters";
 import LightboxImage from "../components/LightboxImage";
+import BoutonPartagerEvenement from "../components/BoutonPartagerEvenement";
 
 import MiniCarteOrganisateur from "../components/MiniCarteOrganisateur";
 import { Helmet } from "react-helmet-async";
@@ -125,9 +126,16 @@ export default function EvenementDetail() {
       </div>
 
       {/* Titre */}
-      <h1 className="text-4xl text-teal-600 font-bold tracking-tight mb-6">
-        {evt.title}
-      </h1>
+      <div className="mb-6 flex items-start justify-between gap-3">
+        <h1 className="min-w-0 flex-1 text-4xl text-teal-600 font-bold tracking-tight">
+          {evt.title}
+        </h1>
+        <BoutonPartagerEvenement
+          title={evt.title}
+          slug={evt.slug}
+          className="mt-1"
+        />
+      </div>
 
       {/* Infos clés */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 p-5 bg-gray-100 rounded-2xl">
