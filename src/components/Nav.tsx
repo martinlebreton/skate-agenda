@@ -10,8 +10,12 @@ export default function Nav() {
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
       <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
         {/* Logo */}
-        <NavLink to="/" className="font-bold text-lg tracking-tight">
-          🛹 Skate Agenda
+        <NavLink
+          to="/"
+          className="flex items-center gap-2 font-bold text-lg tracking-tight"
+        >
+          <img src="/logo-skateevent.svg" alt="" className="h-8 w-8" />
+          <span>Skate Event</span>
         </NavLink>
 
         {/* Liens */}
