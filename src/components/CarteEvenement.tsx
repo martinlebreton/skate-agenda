@@ -19,7 +19,7 @@ export default function CarteEvenement({ evt }: { evt: Evenement }) {
         <img
           src={evt.featuredImage.node.sourceUrl}
           alt={evt.featuredImage.node.altText || evt.title}
-          className="w-full aspect-square object-cover"
+          className="w-full h-56 object-cover"
         />
       )}
 
