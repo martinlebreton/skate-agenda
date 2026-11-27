@@ -4,7 +4,6 @@ import {
   formatPeriode,
   formatTarif,
   formatLocalisation,
-  INFOS_LABELS,
 } from "../utils/formatters";
 
 export default function CarteEvenement({ evt }: { evt: Evenement }) {

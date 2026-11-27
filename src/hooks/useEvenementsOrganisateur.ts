@@ -1,5 +1,4 @@
 import { useEvenements } from "./useEvenements";
-import type { Evenement } from "../types";
 
 export function useEvenementsOrganisateur(databaseId: number) {
   const { data, isLoading, isError } = useEvenements();

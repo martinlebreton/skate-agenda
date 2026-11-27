@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useOrganisateur } from "../hooks/useOrganisateurs";
 import { useEvenementsOrganisateur } from "../hooks/useEvenementsOrganisateur";
-import type { Evenement } from "../types";
 import MiniCarteEvenement from "../components/MiniCarteEvenement";
 import { Helmet } from "react-helmet-async";
 import { formatMetaDescription } from "../utils/formatters";
