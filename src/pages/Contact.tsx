@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { Coffee } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -16,7 +17,7 @@ export default function Contact() {
           Contact
         </h1>
         <p className="text-gray-500 mt-1">
-          L'app des événements skate en France
+          Skate Event - L'app des événements skate en France
         </p>
       </header>
 
@@ -27,7 +28,7 @@ export default function Contact() {
           </h2>
           <p>
             Faites connaître votre événement à toute la communauté skate en
-            France. Écrivez-nous pour l'ajouter à l'agenda :{" "}
+            France. Écrivez-moi pour l'ajouter à l'agenda :{" "}
             <a
               href="mailto:martinlebreton@gmail.com"
               className="font-medium text-teal-700 underline underline-offset-2"
@@ -37,7 +38,7 @@ export default function Contact() {
             .
           </p>
           <p className="text-sm text-gray-500">
-            Nous vous répondrons dès la fin de session.
+            Je réponds dès la fin de session.
           </p>
         </section>
 
@@ -51,20 +52,107 @@ export default function Contact() {
           </p>
         </section>
 
-        <section className="space-y-3 border-t border-gray-200 pt-6">
-          <h2 className="text-lg font-bold text-black">Soutenir le projet</h2>
+        <section className="space-y-3 rounded-xl border border-amber-200 bg-amber-50 p-5 text-amber-950 ">
+          <div className="flex items-center gap-2">
+            <Coffee size={20} className="text-amber-700" aria-hidden="true" />
+            <h2 className="text-lg font-bold">Soutenir le projet</h2>
+          </div>
+          <p className="text-amber-900">
+            Vous pouvez soutenir le développement et l'hébergement de Skate
+            Event en offrant un café :{" "}
+          </p>
           <p>
-            Vous pouvez soutenir le développement de Skate Event en offrant un
-            café :{" "}
             <a
               href="https://buymeacoffee.com/martinlebreton"
               target="_blank"
               rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-amber-300 bg-amber-100 px-4 py-2 font-semibold text-amber-900 no-underline transition-colors hover:bg-amber-200 focus-visible:outline-2 focus-visible:outline-amber-700"
+            >
+              <Coffee size={18} aria-hidden="true" />
+              M'offrir un café
+            </a>
+          </p>
+        </section>
+
+        <section className="space-y-4 border-t border-gray-200 pt-6">
+          <h2 className="text-xl font-bold text-black">
+            Liste des contests et événements skate en France
+          </h2>
+          <p>
+            Depuis plusieurs années, la scène skate française connaît une
+            dynamique exceptionnelle. Des contests locaux organisés par des
+            associations passionnées aux championnats régionaux rassemblant les
+            meilleurs riders, les événements skate se multiplient partout en
+            France. Street, bowl, rampe, park ou best trick : chaque discipline
+            possède sa propre énergie, son public et ses acteurs engagés.
+            Pourtant, il restait difficile de retrouver facilement l’ensemble
+            des compétitions et rassemblements dans un seul espace dédié à la
+            culture skate.
+          </p>
+          <p>
+            Lancée début 2026, SkateEvent est une application pensée pour
+            centraliser et promouvoir tous les événements skate en France. Mon
+            objectif est simple : permettre aux riders, clubs, associations,
+            bénévoles et passionnés de découvrir rapidement les contests et
+            compétitions organisés près de chez eux ou partout sur le
+            territoire. Grâce à une plateforme claire, une web app de skate,
+            SkateEvent facilite l’accès aux informations essentielles : dates,
+            lieux, formats, catégories, inscriptions, résultats et
+            organisateurs. Tu as dans la poche un véritable agenda national du
+            skateboard, constamment mis à jour et accessible à tous.
+          </p>
+          <p>
+            Que vous soyez amateur de skate street, adepte du bowl, passionné de
+            mini-rampe ou compétiteur confirmé, SkateEvent met en avant une
+            grande diversité d’événements. La plateforme valorise autant les
+            petites compétitions locales qui font vivre les skateparks que les
+            grands rendez-vous régionaux et nationaux. Derrière chaque
+            événement, il y a des bénévoles, des collectifs, des associations de
+            skate et des structures qui travaillent toute l’année pour faire
+            évoluer la scène skate française. SkateEvent souhaite leur offrir
+            une visibilité durable et contribuer au développement d’une
+            communauté plus connectée.
+          </p>
+          <p>
+            Autre ambition à long terme : devenir la référence des événements
+            skate en France. En centralisant les contests, démonstrations, jams,
+            compétitions officielles et rassemblements associatifs, nous voulons
+            créer un véritable agenda national du skateboard. Riders débutants
+            ou expérimentés pourront ainsi découvrir de nouveaux spots,
+            rencontrer d’autres pratiquants et participer plus facilement aux
+            événements qui animent la culture skate et savoir où rouler ce
+            week-end.
+          </p>
+          <p>
+            SkateEvent s’adresse également aux organisateurs. Vous organisez une
+            compétition street, un contest bowl, une jam session ou un
+            championnat régional ? La plateforme vous permet de diffuser votre
+            événement auprès d’une communauté engagée et passionnée. Je crois
+            que chaque événement mérite d’être vu, partagé et soutenu, quelle
+            que soit sa taille.
+          </p>
+
+          <h3 className="pt-2 text-lg font-bold text-black">
+            Vision pour la scène skate en France
+          </h3>
+          <p>
+            La scène skate française évolue grâce à celles et ceux qui
+            organisent, construisent, jugent, roulent et transmettent cette
+            culture au quotidien. Compétition, Skateapark, Skateshop, salle de
+            spectacle,... les acteurs sont nombreux. Avec SkateEvent, je
+            souhaite créer un outil moderne capable de rassembler tous ces
+            acteurs autour d’une même passion : la planche à roulettes.
+          </p>
+          <p>
+            Vous souhaitez diffuser votre événement sur SkateEvent ?{" "}
+            <a
+              href="mailto:martinlebreton@gmail.com"
               className="font-medium text-teal-700 underline underline-offset-2"
             >
-              Buy Me a Coffee
-            </a>
-            .
+              Contactez-nous
+            </a>{" "}
+            et cliquez sur Ajouter pour rejoindre la plateforme et participer au
+            développement de la scène skate en France.
           </p>
         </section>
       </div>
