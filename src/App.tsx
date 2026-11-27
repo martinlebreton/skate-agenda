@@ -10,7 +10,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white">
       <Nav />
-      <main>
+      <main className="pb-28 md:pb-0">
         <Routes>
           <Route path="/" element={<Agenda />} />
           <Route path="/agenda" element={<Agenda />} />
