@@ -1,7 +1,26 @@
 import { Helmet } from "react-helmet-async";
-import { Coffee } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Coffee, Plus, X } from "lucide-react";
 
 export default function Contact() {
+  const [isTallyOpen, setIsTallyOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isTallyOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsTallyOpen(false);
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [isTallyOpen]);
   return (
     <div className="max-w-3xl mx-auto px-4 py-10">
       <Helmet>
@@ -22,21 +41,23 @@ export default function Contact() {
       </header>
 
       <div className="space-y-8 text-gray-700">
-        <section className="space-y-3">
+        <section className="space-y-3 rounded-xl border border-teal-200 bg-teal-50 p-5 text-teal-950 ">
           <h2 className="text-lg font-bold text-black">
             Vous organisez un événement skate ?
           </h2>
           <p>
             Faites connaître votre événement à toute la communauté skate en
-            France. Écrivez-moi pour l'ajouter à l'agenda :{" "}
-            <a
-              href="mailto:martinlebreton@gmail.com"
-              className="font-medium text-teal-700 underline underline-offset-2"
-            >
-              martinlebreton@gmail.com
-            </a>
-            .
+            France.
           </p>
+          <button
+            type="button"
+            onClick={() => setIsTallyOpen(true)}
+            className="inline-flex items-center gap-2 rounded-lg bg-teal-700 px-4 py-2.5 font-semibold text-white transition-colors hover:bg-teal-800 focus-visible:outline-2 focus-visible:outline-teal-700"
+          >
+            <Plus size={18} aria-hidden="true" />
+            Ajouter un événement
+          </button>
+
           <p className="text-sm text-gray-500">
             Je réponds dès la fin de session.
           </p>
@@ -143,19 +164,37 @@ export default function Contact() {
             souhaite créer un outil moderne capable de rassembler tous ces
             acteurs autour d’une même passion : la planche à roulettes.
           </p>
-          <p>
-            Vous souhaitez diffuser votre événement sur SkateEvent ?{" "}
-            <a
-              href="mailto:martinlebreton@gmail.com"
-              className="font-medium text-teal-700 underline underline-offset-2"
-            >
-              Contactez-nous
-            </a>{" "}
-            et cliquez sur Ajouter pour rejoindre la plateforme et participer au
-            développement de la scène skate en France.
-          </p>
         </section>
       </div>
+
+      {isTallyOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Ajouter un événement"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-3 sm:p-6"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) setIsTallyOpen(false);
+          }}
+        >
+          <div className="relative h-[min(85vh,720px)] w-full max-w-2xl overflow-hidden rounded-xl bg-white shadow-2xl">
+            <button
+              type="button"
+              onClick={() => setIsTallyOpen(false)}
+              aria-label="Fermer le formulaire"
+              className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 shadow-sm transition-colors hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-teal-700"
+            >
+              <X size={18} aria-hidden="true" />
+            </button>
+            <iframe
+              src="https://tally.so/r/Arvqxl"
+              title="Formulaire d'ajout d'un événement Skate Event"
+              className="h-full w-full border-0"
+              allow="camera; microphone"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
