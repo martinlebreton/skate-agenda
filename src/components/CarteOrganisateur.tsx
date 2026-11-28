@@ -17,8 +17,12 @@ export default function CarteOrganisateur({ org }: { org: Organisateur }) {
           className="w-full aspect-square bg-gray-100 object-contain"
         />
       ) : (
-        <div className="w-full aspect-square bg-gray-100 flex items-center justify-center text-4xl">
-          🛹
+        <div className="w-full aspect-square bg-gray-100 flex items-center justify-center">
+          <img
+            src="/logo-skateevent.svg"
+            alt=""
+            className="h-24 w-24 object-contain saturate-0"
+          />
         </div>
       )}
 

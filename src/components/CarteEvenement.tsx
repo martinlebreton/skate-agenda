@@ -15,24 +15,32 @@ export default function CarteEvenement({ evt }: { evt: Evenement }) {
   return (
     <article className="group rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-200">
       {/* Image */}
-      {evt.featuredImage && (
-        <Link to={`/agenda/${evt.slug}`} className="relative block">
+      <Link to={`/agenda/${evt.slug}`} className="relative block h-56">
+        {evt.featuredImage ? (
           <img
             src={evt.featuredImage.node.sourceUrl}
             alt={evt.featuredImage.node.altText || evt.title}
-            className="w-full h-56 object-cover"
+            className="h-full w-full object-cover"
           />
-          <time
-            dateTime={info.dateDeDebut}
-            className="absolute right-3 top-3 flex h-14 w-14 flex-col items-center justify-center rounded-md border border-gray-100 bg-white text-gray-900 shadow-sm"
-          >
-            <span className="text-lg font-bold leading-none">{jourBadge}</span>
-            <span className="mt-1 text-[10px] font-semibold leading-none">
-              {moisBadge}
-            </span>
-          </time>
-        </Link>
-      )}
+        ) : (
+          <div className="flex h-full w-full items-center justify-center bg-gray-100">
+            <img
+              src="/logo-skateevent.svg"
+              alt=""
+              className="h-24 w-24 object-contain saturate-0"
+            />
+          </div>
+        )}
+        <time
+          dateTime={info.dateDeDebut}
+          className="absolute right-3 top-3 flex h-14 w-14 flex-col items-center justify-center rounded-md border border-gray-100 bg-white text-gray-900 shadow-sm"
+        >
+          <span className="text-lg font-bold leading-none">{jourBadge}</span>
+          <span className="mt-1 text-[10px] font-semibold leading-none">
+            {moisBadge}
+          </span>
+        </time>
+      </Link>
 
       <div className="p-4 flex flex-col gap-2">
         {/* Tags taxonomies */}
